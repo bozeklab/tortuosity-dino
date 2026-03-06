@@ -1,11 +1,10 @@
-import sys
-from pathlib import Path
 from typing import Any
 
-import lightning as L
 import timm
 import torch
 from torch import nn
+
+DINO_CHECKPOINT_URL = "https://dl.fbaipublicfiles.com/"
 
 
 class ModelLoader:
@@ -14,7 +13,7 @@ class ModelLoader:
             cfg: dict[Any, str]
     ):
         self.cfg = cfg
-        self.model_checkpoint = Path(self.cfg["model"]["checkpoint"])
+        self.model_checkpoint = self.cfg["model"]["checkpoint"]
 
     def load(self) -> tuple[nn.Module, int]:
 
@@ -25,7 +24,7 @@ class ModelLoader:
             pretrained=False,
             drop_path_rate=self.cfg["model"]["drop_path_rate"],
         )
-        state_dict = torch.load(self.model_checkpoint, map_location="cpu", weights_only=False)
+        state_dict = torch.hub.load_state_dict_from_url(DINO_CHECKPOINT_URL + self.model_checkpoint, map_location="cpu", weights_only=False)
         model_state_dict = state_dict["teacher"]
         model_state_dict = {k.replace("module.", ""): v for k, v in model_state_dict.items()}
         model_state_dict = {k.replace("backbone.", ""): v for k, v in model_state_dict.items()}

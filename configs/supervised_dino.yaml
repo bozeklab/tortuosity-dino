@@ -11,8 +11,7 @@ optimizer:
   layerwise_decay: 0.9
   patch_embed_lr_mult: 0.2
 model:
-  model_name: "dino_vitb"
-  checkpoint: "/projects/ag-bozek/kouan/cnf_ssl/data/model_checkpoints/fb_dino/dino_vitbase16_pretrain_full_checkpoint/checkpoint.pth"
+  checkpoint: "dino/dino_vitbase16_pretrain/dino_vitbase16_pretrain_full_checkpoint.pth"
   backbone: "deit_base_patch16_224"
   patch_size: 16
   frozen_layers: 6
