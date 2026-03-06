@@ -83,6 +83,7 @@ class SolverLinearProbing(L.LightningModule):
         self.metric_calculator.update(targets, preds)
         val_acc = self.metric_calculator.get_weighted_avg_accuracy()
         self.log_dict({
+            "val_weighted_accuracy": val_acc,
             "val/val_weighted_accuracy": val_acc,
             "val/val_weighted_specificity": self.metric_calculator.get_weighted_avg_specificity(),
             "val/val_weighted_sensitivity": self.metric_calculator.get_weighted_avg_sensitivity(),

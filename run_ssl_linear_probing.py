@@ -76,12 +76,12 @@ def main():
     os.makedirs(MODEL_CHECKPOINT_DIR, exist_ok=True)
     print(f"Saving model to {MODEL_CHECKPOINT_DIR}")
     checkpoint_callback = ModelCheckpoint(
-        monitor='val/val_weighted_accuracy',
+        monitor='val_weighted_accuracy',
         mode='max',
         save_top_k=NUM_MODEL_CHECKPOINTS,
         save_last=True,
         dirpath=MODEL_CHECKPOINT_DIR,
-        filename='{epoch}-{val/val_weighted_accuracy:.2f}'
+        filename='{epoch}-{val_weighted_accuracy:.2f}'
     )
 
     trainer = L.Trainer(

@@ -145,6 +145,7 @@ class SupervisedDINO(L.LightningModule):
         self.metric_calculator.update(targets, preds)
         val_acc = self.metric_calculator.get_weighted_avg_accuracy()
         self.log_dict({
+            "val_weighted_accuracy": val_acc,
             "val/val_weighted_accuracy": val_acc,
             "val/val_weighted_specificity": self.metric_calculator.get_weighted_avg_specificity(),
             "val/val_weighted_sensitivity": self.metric_calculator.get_weighted_avg_sensitivity(),
@@ -183,8 +184,6 @@ class SupervisedDINO(L.LightningModule):
         targets = torch.cat(self.test_targets, dim=0)
         self.metric_calculator.reset()
         self.metric_calculator.update(targets, preds)
-        preds = preds.to(self.device)
-        targets = targets.to(self.device)
         self.log_dict({
             "test/test_weighted_accuracy": self.metric_calculator.get_weighted_avg_accuracy(),
             "test/test_weighted_specificity": self.metric_calculator.get_weighted_avg_specificity(),
