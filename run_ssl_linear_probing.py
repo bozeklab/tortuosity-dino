@@ -17,10 +17,9 @@ from src.train_eval.solver_linear_probing import SolverLinearProbing
 from src.utils.read_write import read_yaml
 
 CWD = Path(__file__).parent
-DATA_DIR = CWD /'data' / 'CORN1500_noD'
+DATA_DIR = CWD / 'data'
 CONFIG_PATH = CWD / "configs" / "ssl_linear_probing.yaml"
 PROJECT_NAME = "CORN1500_linear_probing_clean"
-FILE_EXTENSION = ".jpg"
 NUM_CLASSES = 4
 
 wandb_settings = wandb.Settings(
@@ -51,7 +50,6 @@ def main():
         val_size=0.3,
         train_transforms=train_transforms,
         test_transforms=test_transforms,
-        file_extension=FILE_EXTENSION,
         dataset=CNFDataset,
     )
 

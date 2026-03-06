@@ -18,10 +18,9 @@ from src.train_eval.supervised_dino_ft import SupervisedDINO
 from src.utils.read_write import read_yaml
 
 CWD = Path(__file__).parent
-DATA_DIR = CWD / "data" / "CORN1500_noD"
+DATA_DIR = CWD / "data"
 CONFIG_PATH = CWD / "configs" / "supervised_dino.yaml"
 PROJECT_NAME = "corn1500_dino_sl_clean"
-FILE_EXTENSION = ".jpg"
 NUM_CLASSES = 4
 VAL_SIZE = 0.3
 
@@ -53,7 +52,6 @@ def main():
         val_size=VAL_SIZE,
         train_transforms=train_transforms,
         test_transforms=test_transforms,
-        file_extension=FILE_EXTENSION,
         dataset=CNFDataset,
     )
 
