@@ -8,6 +8,5 @@ PyYAML==6.0.3
 scikit-learn==1.7.2
 timm==1.0.24
 torch==2.10.0
-torchmetrics==1.8.2
 torchvision==0.25.0
 wandb==0.23.0
