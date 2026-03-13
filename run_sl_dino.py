@@ -66,7 +66,7 @@ def main():
     )
 
     iter_per_epoch = int(np.ceil(1250 * (1-VAL_SIZE) / cfg["batch_size"]))
-    solver = SupervisedDINO(model=model, num_classes=NUM_CLASSES, cfg=cfg, iter_per_epoch=iter_per_epoch)
+    solver = SupervisedDINO(model=model, cfg=cfg, iter_per_epoch=iter_per_epoch)
 
     lr_monitor = LearningRateMonitor(logging_interval='epoch')
 

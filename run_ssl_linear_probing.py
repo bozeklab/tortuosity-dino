@@ -67,7 +67,7 @@ def main():
     for param in classifier_model.feature_extractor.parameters():
         param.requires_grad = False
 
-    solver = SolverLinearProbing(model=classifier_model, num_classes=NUM_CLASSES, cfg=cfg)
+    solver = SolverLinearProbing(model=classifier_model, cfg=cfg)
 
     lr_monitor = LearningRateMonitor(logging_interval='epoch')
 
