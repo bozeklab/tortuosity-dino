@@ -13,16 +13,17 @@ class SupervisedDINO(SolverClassification):
     def __init__(
             self,
             model: nn.Module,
-            num_classes: int,
             cfg: dict[str, Any],
             iter_per_epoch: int
     ):
-        super().__init__(model=model, num_classes=num_classes, cfg=cfg)
+        super().__init__(model=model, cfg=cfg)
 
         self.automatic_optimization = False
 
         # params
         self.iter_per_epoch = iter_per_epoch
+
+        # loss
         self.train_loss_function = nn.CrossEntropyLoss(label_smoothing=cfg['loss']['label_smoothing'])
         self.val_loss_function = nn.CrossEntropyLoss()
 

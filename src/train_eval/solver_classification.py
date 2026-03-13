@@ -14,7 +14,6 @@ class SolverClassification(L.LightningModule):
     def __init__(
             self,
             model: nn.Module,
-            num_classes: int,
             cfg: dict[str, Any]
     ):
         super().__init__()
@@ -28,8 +27,6 @@ class SolverClassification(L.LightningModule):
 
         # metrics
         self.best_val_accuracy = 0.0
-
-        # metrics
         self.metric_calculator = MetricCalculator()
 
         ## train
@@ -66,7 +63,6 @@ class SolverClassification(L.LightningModule):
         }, on_step=False, on_epoch=True, prog_bar=True)
         self.train_preds.clear()
         self.train_targets.clear()
-
         return
 
     def on_validation_epoch_end(self):

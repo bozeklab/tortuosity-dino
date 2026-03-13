@@ -12,11 +12,11 @@ class SolverLinearProbing(SolverClassification):
     def __init__(
             self,
             model: nn.Module,
-            num_classes: int,
             cfg: dict[str, Any]
     ):
-        super().__init__(model=model, num_classes=num_classes, cfg=cfg)
+        super().__init__(model=model, cfg=cfg)
 
+        # loss
         self.loss_function = nn.CrossEntropyLoss()
 
         # optimizer
