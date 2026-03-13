@@ -24,9 +24,3 @@ class CNFDataset(Dataset):
             image = self.transform(image)
 
         return image, label
-
-
-class ReturnIndexDatasetCNF(CNFDataset):
-    def __getitem__(self, idx):
-        img, label = super(ReturnIndexDatasetCNF, self).__getitem__(idx)
-        return img, label, idx
