@@ -6,7 +6,8 @@ a) Request access to the data from [zenodo](https://zenodo.org/records/12776091)
 b) Copy the data to the `data/` directory. <br>
 c) In `data/` we provide the `data_split.json` file that contains indices for training/validation/testing splits without the duplicated files. <br> 
 To use the subsets without the duplications, rename your data folders to CORN1500_noD and CORN-3_noD. <br>
-d) Install dependencies: 
+d) Install dependencies: <br>
+Experiments were run on Python 3.12.12 <br>
 ```
 pip install -r requirements.txt
 ```
