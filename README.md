@@ -1,4 +1,4 @@
-# Tortuosity DINO - Fine-tuning DINO for Tortuosity Prediction of Corneal Nerve Fibers in In Vivo Confocal Microscopy Images
+# Tortuosity DINO - DINO for Tortuosity Prediction of Corneal Nerve Fibers in In Vivo Confocal Microscopy Images
 
 **This paper is under review.**
 
