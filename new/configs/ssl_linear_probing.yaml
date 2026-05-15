@@ -1,0 +1,12 @@
+batch_size: 32
+epochs: 100
+optimizer:
+  name: "sgd"
+  lr: 1.e-2
+  momentum: 0.9
+model:
+  backbone: "deit_base_patch16_224"
+  patch_size: 16
+  output_size: 304
+  checkpoint: "dino/dino_vitbase16_pretrain/dino_vitbase16_pretrain_full_checkpoint.pth"
+  drop_path_rate: 0.0
