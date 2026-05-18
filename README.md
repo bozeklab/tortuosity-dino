@@ -22,3 +22,22 @@ For Fine-tuning run:
 ```
 python run_sl_dino.py
 ```
+
+## Citation
+
+If you used this work, please cite:
+
+```
+@misc{ouan_self-supervised_2026,
+	title = {Self-{Supervised} {ImageNet} {Representations} for {In} {Vivo} {Confocal} {Microscopy}: {Tortuosity} {Grading} without {Segmentation} {Maps}},
+	url = {http://arxiv.org/abs/2603.15269},
+	doi = {10.48550/arXiv.2603.15269},
+	urldate = {2026-05-18},
+	publisher = {arXiv},
+	author = {Ouan, Kim and Moreau, Noémie and Bozek, Katarzyna},
+	month = may,
+	year = {2026},
+	note = {arXiv:2603.15269 [cs]},
+	keywords = {Computer Science - Computer Vision and Pattern Recognition},
+}
+```
